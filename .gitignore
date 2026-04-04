@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+Build/
+DIST/
+NullFoxEggInfo/
+.env
