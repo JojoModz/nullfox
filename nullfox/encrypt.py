@@ -1,41 +1,33 @@
-import base64
-from .utils import xor_encrypt
+"""
+NullFox Encryption Suite File Processing Interfaces
+Exposes optimized wrappers pointing to native C file processing subroutines.
+"""
 
-def encrypt_static(input_path, output_path, key):
-    with open(input_path, "rb") as f:
-        data = f.read()
+import os
+from .wrapper import file_encrypt_py, file_decrypt_py
 
-    encrypted = xor_encrypt(data, key)
-    encoded = base64.b64encode(encrypted)
-
-    with open(output_path, "wb") as f:
-        f.write(encoded)
-
+def encrypt_file(input_path: str, output_path: str, key: bytes, iv: bytes) -> bool:
+    """
+    Encrypts a file asset using the native C file processing engine.
+    """
+    if not os.path.exists(input_path):
+        raise FileNotFoundError(f"[Error] Source file target could not be resolved: {input_path}")
+        
+    result = file_encrypt_py(input_path, output_path, key, iv)
+    if result != 0:
+        raise RuntimeError(f"[Error] Native C file encryption engine failed with execution token: {result}")
+        
     return True
 
-
-def decrypt_static(input_path, output_path, key):
-    with open(input_path, "rb") as f:
-        data = f.read()
-
-    decoded = base64.b64decode(data)
-    decrypted = xor_encrypt(decoded, key)
-
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(decrypted.decode("utf-8", errors="ignore"))
+def decrypt_file(input_path: str, output_path: str, key: bytes, iv: bytes) -> bool:
+    """
+    Decrypts a file asset using the native C file processing engine.
+    """
+    if not os.path.exists(input_path):
+        raise FileNotFoundError(f"[Error] Target encrypted container could not be resolved: {input_path}")
         
-    
-def decrypt_runtime(input_path, key):
-    with open(input_path, "rb") as f:
-        data = f.read()
-
-    decoded = base64.b64decode(data)
-    decrypted = xor_encrypt(decoded, key)
-
-    return decrypted  # ⚔️ return bytes
-    
-  
-def encrypt_file(input_path, output_path, key):
-    return encrypt_static(input_path, output_path, key)
-
+    result = file_decrypt_py(input_path, output_path, key, iv)
+    if result != 0:
+        raise RuntimeError(f"[Error] Native C file decryption engine failed with execution token: {result}")
+        
     return True

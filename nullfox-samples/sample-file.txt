@@ -1,0 +1,4 @@
+This is a sample file for testing. 
+Lorem Ipsum is a typesetting of dummy text printing.
+
+My secret data: I like pizza!, I like nullfox!, I like Python!

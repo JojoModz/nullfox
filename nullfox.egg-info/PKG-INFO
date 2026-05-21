@@ -1,7 +1,7 @@
 Metadata-Version: 2.4
 Name: nullfox
-Version: 0.5.0
-Summary: A Python toolkit for encrypting and loading Lua scripts (XOR & Base64 engine)
+Version: 0.6.0
+Summary: Cross-platform universal file encryption toolkit utilizing optimized native AES-256 and SHA-256 engines.
 Author-email: NullFox <pr0zone.gmaing.z@gmail.com>
 License: MIT
 Project-URL: Homepage, https://github.com/JojoModz/nullfox
@@ -14,16 +14,36 @@ Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Classifier: Topic :: Security :: Cryptography
 Classifier: Topic :: Software Development :: Libraries
+Classifier: Development Status :: 4 :: Beta
 Requires-Python: >=3.7
 Description-Content-Type: text/markdown
 License-File: LICENCE
+Requires-Dist: cffi>=1.15.0
 Dynamic: license-file
 
-# NullFox Encrypter 🦊🔥
+# NullFox Encryption Suite
 
-A lightweight  encryption module created by NullF🦊X.
+An enterprise-grade, high-performance cross-platform universal file encryption toolkit utilizing optimized native AES-256 (Cipher Block Chaining) and SHA-256 machine engines.
 
 ## Features
-- XOR + Base64 encryption
-- Fast and simple
-- Works on any file
+
+* **Multi-Platform Native Acceleration**: Built-in architecture tracking across Microsoft Windows (`.dll`), Linux Desktop (`.so`), and Google Android (`.so`) runtime target boundaries.
+* **Cryptographic Rigor**: High-speed symmetric file protection using AES-256-CBC block ciphers powered by direct native C Foreign Function Interface (CFFI) memory binds.
+* **Deterministic Key Derivation**: Transparent variable-length master password stretching via custom SHA-256 hashing routines, completely removing the requirement for manual initialization vector inputs.
+* **Universal Stream Support**: Pure binary-safe sequential tracking capable of processing any digital asset, including script source files, binary application components, imagery, and database backups.
+* **Zero Host Pollution**: Clean, lightweight integration boundary with zero loose environmental footprint requirements or external library runtime runtime dependencies.
+
+## Architecture Map
+
+The NullFox layout automatically distributes and binds pre-compiled native binaries matching the current execution environment profile:
+
+* `libnullfox_windows.dll` — Native machine target module for Windows Desktop x86_64 architectures.
+* `libnullfox_linux.so` — Native machine target module for Linux Desktop x86_64 environments.
+* `libnullfox_android.so` — Native machine target module for Android Mobile ARM64 architectures.
+
+## Installation
+
+Install the library along with its structural C-bridge prerequisites directly via your local directory toolchain:
+
+```bash
+pip install .
