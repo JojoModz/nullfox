@@ -13,16 +13,15 @@ authors = [
     { name = "NullFox", email = "pr0zone.gmaing.z@gmail.com" }
 ]
 
-license = { text = "MIT" }
+license = "MIT"
 
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Topic :: Security :: Cryptography",
     "Topic :: Software Development :: Libraries",
-    "Development Status :: 4 :: Beta",
+    "Development Status :: 4 - Beta",
 ]
 
 dependencies = [

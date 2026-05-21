@@ -13,7 +13,7 @@ from nullfox.utils import xor_encrypt
 
 # Global Package Component Metadata Tracking
 __version__ = "0.6.0"
-__author__ = "NullFox Developer Team"
+__author__ = "JojoModz"
 __license__ = "MIT"
 
 # Control explicit package namespace exports
