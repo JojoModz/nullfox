@@ -24,6 +24,7 @@ Install the library along with its structural C-bridge prerequisites directly vi
 
 ```bash
 pip install .
+```
 
 ## Binary Security Verification
 
