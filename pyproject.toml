@@ -4,21 +4,20 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nullfox"
-version = "0.6.0"
+version = "0.7.0"
 description = "Cross-platform universal file encryption toolkit utilizing optimized native AES-256 and SHA-256 engines."
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.11"
+license = "MIT"
 
 authors = [
     { name = "NullFox", email = "pr0zone.gmaing.z@gmail.com" }
 ]
 
-license = "MIT"
-
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3 :: Only",
-    "Operating System :: OS Independent",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
     "Topic :: Security :: Cryptography",
     "Topic :: Software Development :: Libraries",
     "Development Status :: 4 - Beta",
@@ -28,14 +27,12 @@ dependencies = [
     "cffi>=1.15.0",
 ]
 
-[tool.setuptools.packages.find]
-include = ["nullfox", "nullfox.*"]
+[tool.setuptools]
+packages = ["nullfox", "nullfox.src.Binaries", "nullfox.src.C", "nullfox.src.Python"]
 
 [tool.setuptools.package-data]
-"nullfox" = ["*.so", "*.dll"]
-
-[tool.setuptools]
-include-package-data = true
+"nullfox.src.Binaries" = ["*.so", "*.dll", "*.bat", "*.sh"]
+"nullfox.src.C" = ["*.c", "*.h"]
 
 [project.urls]
 Homepage = "https://github.com/JojoModz/nullfox"

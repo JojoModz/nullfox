@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+---
+
+## [0.7.0] - 2026-06-09
+
+### Added
+- Native Android `x86_64` architecture binary core asset (`libnullfox_android_x86_64.so`) for seamless high-performance desktop mobile emulator testing.
+- Dynamic hardware instruction set routing layer inside the Python wrapper to seamlessly swap between AVX2, generic, ARM64, and x86_64 cores.
+- Decoupled, isolated tokenization engine separating Key and IV initialization generation vectors from standard runtime memory spaces.
+- Strict parameter constraint shield layers to automatically block missing assets or unallocated memory blocks before hitting the C binary.
+
+### Changed
+- Complete overhaul of the `pyproject.toml` package-data scanner logic to enforce global directory asset tracking and prevent missing wheel resources.
+- Upgraded Python wrapper architecture to cleanly map assets using relative platform execution footprints instead of hardcoded workspace directory locations.
+
+### Fixed
+- Fixed critical multi-platform deployment crashes caused by implicit subpackage mapping exclusions during pip wheel assembly.
+
+---
+
 ## [0.6.0] - 2026-05-21
 
 ### Added
@@ -19,6 +38,8 @@ All notable changes to this project will be documented in this file. The format 
 - Deprecated dynamic memory runtime loader systems to eliminate host execution overhead and stability conflicts.
 - Removed plain-text Base64 obfuscation routines in favor of standardized raw binary array operations.
 
+---
+
 ## [0.5.0] - 2026-04-04
 
 ### Added
@@ -33,6 +54,8 @@ All notable changes to this project will be documented in this file. The format 
 ### Improved
 - General code structure organization and file tracking cleanup.
 
+---
+
 ## [0.4.0] - 2025-12-07
 
 ### Fixed
@@ -41,8 +64,17 @@ All notable changes to this project will be documented in this file. The format 
 ### Changed
 - Project configuration metadata alignment to support standard software deployment specifications.
 
+---
+
 ## [0.3.0] - 2025-12-06
 
 ### Added
 - Foundational file transformation operations utilizing combined basic transformation matrices.
 - Early stage isolated interpretation sandbox module for execution verification routines.
+
+---
+
+## [0.1.0] - 2025-12-06
+
+### Added
+- Initial public alpha release of the `nullfox` project ecosystem deployed to the PyPI package matrix.

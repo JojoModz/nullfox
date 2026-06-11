@@ -1,24 +1,34 @@
 """
-NullFox Cross-Platform Native Encryption Suite
-An enterprise-grade, high-performance compilation toolkit providing optimized
-AES-256 and SHA-256 cryptographic routines across Windows, Linux, and Android targets.
+NullFox Cryptographic Suite - Top-Level Namespace Shortcut Router
+Exposes the core 0.7.0 API directly from the underlying src/Python layer.
 """
 
-# Explicitly expose top-level public API functions for developers
-from nullfox.encrypt import (
+from .src.Python.engine_backend import (
+    encrypt_string,
+    decrypt_string,
     encrypt_file,
     decrypt_file
 )
-from nullfox.utils import xor_encrypt
 
-# Global Package Component Metadata Tracking
-__version__ = "0.6.0"
-__author__ = "JojoModz"
-__license__ = "MIT"
+from .src.Python.wrapper import (
+    generate_key,
+    generate_iv,
+    generate_key_pair,
+    aes_encrypt_py,
+    aes_decrypt_py
+)
 
-# Control explicit package namespace exports
+__version__ = "0.7.0"
+__author__ = "NullFox"
+
 __all__ = [
+    "encrypt_string",
+    "decrypt_string",
     "encrypt_file",
     "decrypt_file",
-    "xor_encrypt"
+    "generate_key",
+    "generate_iv",
+    "generate_key_pair",
+    "aes_encrypt_py",
+    "aes_decrypt_py"
 ]
